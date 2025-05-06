@@ -7,3 +7,4 @@ tensorflow
 joblib
 uvicorn
 numpy
+jinja2
