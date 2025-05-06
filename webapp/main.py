@@ -1,10 +1,15 @@
-from fastapi import FastAPI, HTTPException
-from webapp.backend.models.newsmodels import NewsItem
-from webapp.backend.models.modelmanager import FakeNewsModelManager
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import HTMLResponse
+from webapp.models.newsmodels import NewsItem
+from webapp.models.modelmanager import FakeNewsModelManager
 from config import models_isot_path
+from fastapi.templating import Jinja2Templates
+
 
 
 app = FastAPI()
+templates = Jinja2Templates(directory="webapp/templates")
+
 
 model_manager = FakeNewsModelManager(
     model_paths={
@@ -33,9 +38,9 @@ def result_serializer(model, result) -> dict:
         }
 
 
-@app.get("/")
-def read_root():
-    return {"message": "This is a workers database API!"}
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.post("/predict")

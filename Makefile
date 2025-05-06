@@ -6,12 +6,9 @@ install: ## Install required Python dependencies
 	pip3 install -r requirements.txt
 
 
-backend_run: ## Run the backend app
-	echo "running the backend"
-	uvicorn webapp.backend.main:app --reload
-
-
-run: backend_run ## Run the app
+run: ## Run the app
+	echo "running the app"
+	uvicorn webapp.main:app --reload
 
 
 install_and_run: install run ## Install dependencies and run the app

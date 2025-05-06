@@ -23,8 +23,8 @@ A web interface is built using **FastAPI**. It allows users to interact with the
 
 ### 🔌 Backend
 
-The backend runs at:  
-**http://127.0.0.1:8000/**
+The app runs at:  
+**http://127.0.0.1:8000**
 
 Interactive documentation is available at:  
 **http://127.0.0.1:8000/docs**
@@ -70,10 +70,10 @@ make install
 
 Installs the required packages listed in `requirements.txt`.
 
-### ▶️ Run the backend (FastAPI server)
+### ▶️ Run the FastAPI app
 
 ```bash
-make backend_run
+make run
 ```
 
 Runs the FastAPI server with `uvicorn`.
