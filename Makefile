@@ -8,7 +8,7 @@ install: ## Install required Python dependencies
 
 run: ## Run the app
 	echo "running the app"
-	uvicorn webapp.main:app --reload
+	uvicorn webapp.main:app --host 0.0.0.0 --reload
 
 
 install_and_run: install run ## Install dependencies and run the app

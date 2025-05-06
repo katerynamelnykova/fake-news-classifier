@@ -3,12 +3,20 @@ from fastapi.responses import HTMLResponse
 from webapp.models.newsmodels import NewsItem
 from webapp.models.modelmanager import FakeNewsModelManager
 from config import models_isot_path
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
-
 
 
 app = FastAPI()
 templates = Jinja2Templates(directory="webapp/templates")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 model_manager = FakeNewsModelManager(
