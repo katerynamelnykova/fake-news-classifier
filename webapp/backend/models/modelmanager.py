@@ -2,7 +2,7 @@ from helpers.prediction_utils import apply_model, apply_nn
 
 import joblib
 from typing import Dict
-from tensorflow.keras.models import load_model # type: ignore
+from keras.models import load_model
 
 class FakeNewsModelManager:
     def __init__(self, model_paths: Dict[str, str], vectorizer_path: str) -> None:

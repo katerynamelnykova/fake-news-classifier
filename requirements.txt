@@ -1,8 +1,9 @@
 fastapi
 pandas
-scikit-learn
-nltk
+scikit-learn==1.2.2
+nltk==3.8.1
 matplotlib
 tensorflow==2.13.0
 joblib
 uvicorn
+numpy==1.24.2
