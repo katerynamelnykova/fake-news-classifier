@@ -8,3 +8,4 @@ joblib
 uvicorn
 numpy==1.24.2
 jinja2
+setuptools>=66
