@@ -1,4 +1,3 @@
-setuptools
 fastapi
 pandas
 scikit-learn==1.2.2
