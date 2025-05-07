@@ -3,6 +3,8 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import nltk
 
+nltk.download('punkt_tab')
+
 def clean_text(text):
     nltk.download('stopwords')
     stop_words = set(stopwords.words('english'))

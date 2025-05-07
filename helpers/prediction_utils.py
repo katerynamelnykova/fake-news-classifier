@@ -6,7 +6,7 @@ import joblib
 
 
 def apply_model(model, text):
-    return model.predict([text])[0]
+    return int(model.predict([text])[0])
 
 def apply_nn(model, text):
     tokenizer = joblib.load(f'{models_isot_path}/tokenizer_isot.joblib')
@@ -14,7 +14,7 @@ def apply_nn(model, text):
 
     padded_sequence = pad_sequences(sequence, maxlen=200)
 
-    prediction =  model.predict(padded_sequence)
+    prediction =  model.predict(padded_sequence)[0][0]
     
-    return (prediction, (prediction > 0.5).astype(int)[0][0])
+    return (prediction, int((prediction > 0.5).astype(int)))
 

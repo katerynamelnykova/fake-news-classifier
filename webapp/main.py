@@ -36,7 +36,7 @@ def result_serializer(model, result) -> dict:
     if isinstance(result, tuple):
         return {
         "model": str(model),
-        "model_output": str(result[0][0][0]),
+        "model_output": str(result[0]),
         "prediction": str(result[1])
     }
     

@@ -13,9 +13,3 @@ run: ## Run the app
 
 install_and_run: install run ## Install dependencies and run the app
 
-deploy: 
-	pyenv install 3.9.6
-	pyenv local 3.9.6
-	pip3 install -r requirements.txt
-	uvicorn webapp.main:app --host 0.0.0.0 --reload --port 8000
-
