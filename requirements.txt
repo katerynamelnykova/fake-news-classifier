@@ -1,3 +1,4 @@
+setuptools
 fastapi
 pandas
 scikit-learn==1.2.2
@@ -8,4 +9,3 @@ joblib
 uvicorn
 numpy==1.24.2
 jinja2
-setuptools>=66
