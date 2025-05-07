@@ -1,5 +1,5 @@
 from config import models_isot_path
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 import joblib
 
