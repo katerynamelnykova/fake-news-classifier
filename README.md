@@ -1,5 +1,5 @@
 # Fake News Detection System
-A system for detecting fake news using machine learning techniques. Developed as part of a bachelor's thesis in information systems.
+A system for detecting fake news using machine learning techniques. Developed as part of a bachelor's thesis in information systems and technologies.
 
 
 ## 📂 Project Structure
@@ -54,6 +54,8 @@ Interactive documentation is available at:
 
 ## 🚀 How to Run
 
+Python 3.12 is required to run this project locally without Docker.
+
 A `Makefile` is provided to simplify installation and launching.
 
 ### 🔧 Show all available commands
@@ -84,4 +86,21 @@ Runs the FastAPI server with `uvicorn`.
 make install_and_run
 ```
 
+---
+
+### 🐳 Run with Docker (no need to install Python locally)
+
+If you prefer containerized execution, you can build and run the app using Docker:
+
+#### 🔨 Build the Docker image
+
+```bash
+docker build -t fake-news-app .
+```
+
+#### ▶️ Run the app in a container
+
+```bash
+docker run -it --rm -p 8000:8000 fake-news-app
+```
 

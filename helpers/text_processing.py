@@ -4,9 +4,9 @@ from nltk.corpus import stopwords
 import nltk
 
 nltk.download('punkt_tab')
+nltk.download('stopwords')
 
 def clean_text(text):
-    nltk.download('stopwords')
     stop_words = set(stopwords.words('english'))
 
     text_without_punctuation = re.sub(r'[^\w\s]', '', text)
