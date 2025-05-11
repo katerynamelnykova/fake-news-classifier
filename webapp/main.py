@@ -5,6 +5,7 @@ from webapp.models.modelmanager import FakeNewsModelManager
 from config import models_isot_path
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
+import asyncio
 
 
 app = FastAPI()
@@ -52,9 +53,12 @@ async def root(request: Request):
 
 
 @app.post("/predict")
-def predict_news(req: NewsItem):
+async def predict_news(req: NewsItem):
+    loop = asyncio.get_event_loop()
     try:
-        result = model_manager.predict(req.text, req.model)
+        result = await loop.run_in_executor(
+            None, model_manager.predict, req.text, req.model
+        )
         return result_serializer(req.model, result)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
