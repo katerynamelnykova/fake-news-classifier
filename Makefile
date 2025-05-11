@@ -13,3 +13,14 @@ run: ## Run the app
 
 install_and_run: install run ## Install dependencies and run the app
 
+
+docker_build:	## Build the Docker image
+	docker build -t fake-news-app .
+
+
+docker_run:	## Run the Docker container
+	docker run -it --rm -p 8000:8000 fake-news-app
+
+
+docker_all: docker_build docker_run ## Build and run the Docker container
+
